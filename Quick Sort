@@ -1,7 +1,7 @@
 Quick Sort – A sorting technique that sequences a list by continuously dividing the list into two parts and moving the lower items to one side and the higher items to the other. It starts by picking one item in the entire list to serve as a pivot point. The pivot could be the first item or a randomly chosen one. All items that compare lower than the pivot are moved to the left of the pivot; all equal or higher items are moved to the right. It then picks a pivot for the left side and moves those items to left and right of the pivot and continues the pivot picking and dividing until there is only one item left in the group. It then proceeds to the right side and performs the same operation again.
 
 Example (Concrete) – Quick Sort
-	var items = [100, -1, -100, 20, 10, 13, 11, 67, 54, 88, 73, 99, 89, 100, 80];
+	var items = [100, -1, -100, 20, 10, 13, 11, 67, 54, 88, 73, 99, 89, 100, 80]; 
 
 // This function will be used to arrange 1 element in its correct position at every iteration of the complete implementation of the function
 function pivot(arr, start=0, end=arr.length+1){
