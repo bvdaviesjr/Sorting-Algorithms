@@ -1,0 +1,41 @@
+Merge Sort – It is a sorting algorithm that splits the items to be sorted into two groups, recursively sorts each group, and merges them into a final, sorted sequence. Simply put, Merge sort is one of the most efficient sorting algorithms. It works on the principle of Divide and Conquer. Merge sort repeatedly breaks down a list into several sublists until each sublist consists of a single element and merging those sublists in a manner that results into a sorted list.
+
+Example (Concrete) – Merge Sort
+// Merge function from earlier
+function merge(arr1, arr2){
+    let results = [];
+    let i = 0;
+    let j = 0;
+// The loop will iterate equally through the both array equally until the condition is false 
+    while(i < arr1.length && j < arr2.length){
+        if(arr2[j] > arr1[i]){
+            results.push(arr1[i]);
+            i++;
+        } else {
+            results.push(arr2[j])
+            j++;
+        }
+    }
+// This loop will iterate through the rest of the first array
+    while(i < arr1.length) {
+        results.push(arr1[i])
+        i++;
+    }
+// This loop will iterate through the rest of the second array
+    while(j < arr2.length) {
+        results.push(arr2[j])
+        j++;
+    }
+    return results;
+}
+
+// This function will find the mid-point at every recursive iteration of the array until the arr <=1
+function mergeSort(arr){
+    if(arr.length <= 1) return arr;
+    let mid = Math.floor(arr.length/2);
+    let left = mergeSort(arr.slice(0,mid));
+    let right = mergeSort(arr.slice(mid));
+    return merge(left, sright);
+}
+// The function will implement the mergeSort Function
+console.log(mergeSort([10,24,76,73]))
