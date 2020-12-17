@@ -1,0 +1,52 @@
+Bubble Sort visual implementation  (Iteration through the loop)
+
+First Pass:
+( 5 1 4 2 8 ) –> ( 1 5 4 2 8 ), compares the first two elements, and swaps since 5 > 1.
+( 1 5 4 2 8 ) –>  ( 1 4 5 2 8 ), Swap since 5 > 4
+( 1 4 5 2 8 ) –>  ( 1 4 2 5 8 ), Swap since 5 > 2
+( 1 4 2 5 8 ) –> ( 1 4 2 5 8 ), Since (8 > 5), you’ve completed the first iteration.
+
+Second Pass:
+( 1 4 2 5 8 ) –> ( 1 4 2 5 8 )
+( 1 4 2 5 8 ) –> ( 1 2 4 5 8 ), Swap since 4 > 2
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )
+( 1 2 4 5 8 ) –>  ( 1 2 4 5 8 )
+
+Now, the array is already sorted, but our algorithm does not know if it is completed. The algorithm needs one whole pass without any swap to know it is sorted.
+Third Pass:
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )
+
+Example (Concrete) – Bubble Sort
+Give an array arr = [10, 30, 90, 40, 55, 60, 13, 900, 899, 80, 65], sort this array in ascending order…
+
+// Create a function with one parameter - array
+function bubbleSort(arr){
+// This variable will be used to check whether there is a swap
+let noSwap;
+// This loop will be used iterate each time through the array 
+for(let i = 0; i < arr.length; i++){
+	noSwap = true;
+	// This loop will be used to iterate through the array according to the length -1 times
+	// When inner loop reaches end, it will move the iteration to the next part of the outer loop
+	for(let j = 0; j < arr.length - 1; j++){
+	// This condition will check if the first value in the array is greater than its adjacent value
+	if(arr[j] > arr[j+1]){
+	//swap arr[j+1] and arr[j]
+	let temp = arr[j];
+	arr[j] = arr[j+1];
+	arr[j+1] = temp;
+	// sets noSwap to because there was a swap
+	noSwap = false;
+	}
+}
+	// When the array is sorted and there is no swaps to be done, this code will run
+	if(noSwap) break;
+}
+	// Returns the arr
+	return arr;
+}
+// This code will execute the function
+console.log(bubbleSort([10, 30, 90, 40, 55, 60, 13, 900, 899, 80, 65]))
