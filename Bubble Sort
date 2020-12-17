@@ -1,3 +1,20 @@
+Bubble Sort – is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order (which means – the first element is larger than the next or following element). The pass through the list is repeated until the list is sorted in ascending order (from smallest element to the largest). Note: At every complete iteration of the loop the current largest number in the array or string is arranged at the top or the end of the array; also, at every iteration of the array or string you have one (1) sorted array thus the array unsorted elements will decrease by one (1).
+
+Implementation – Less Optimized Solution (Pseudo-code)
+
+a.)	Create a function that accepts an array at its argument
+
+b.)	Within the function create loop that you iterate from the beginning until it’s less than the length of array that was used as the function argument
+
+c.)	Within the first loop, create a second (inner) loop that will iterate from the beginning until it’s less than the length of the same array minus one (array.length – 1)
+
+d.)	Within the second loop, create an If statement that will compare whether the first array-value captured by the first loop (array[j]) is greater than the second array-		value captured by the second loop (array[j] + 1). If yes, then swap the first array-value with second array-value by defining a temp-variable to control the swapping 		process.
+
+e.)	To do the swapping, create the temp variable and set the array[j] element to the variable. Now, set the array[j] to the value of array[j] + 1 and finally set the arr[j] 	+1 element to the value in the temp variable.
+
+f.)	At the beginning of the function, create a variable called noSwaps. Within the first loop (outer loop, set noSwaps variable to TRUE. At the end of the out inner loop but 	within the outer loop, create an if statement that will test if there is no swaps done with the elements in the array so it can stop the loop. Note: At the end of the if 	statement where you are swapping the array-content based on the condition, set noSwaps to false;
+
+
 Bubble Sort visual implementation  (Iteration through the loop)
 
 First Pass:
